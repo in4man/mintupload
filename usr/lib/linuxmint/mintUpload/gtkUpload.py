@@ -524,18 +524,5 @@ class mintUploadWindow:
 		return True
 
 if __name__ == "__main__":
-	if len(sys.argv) < 2:
-		print "need a file to upload!"
-		exit(1)
-	if len(sys.argv) > 2:
-		print "too many files! using only the first!"
-	if sys.argv[1] == "--version":
-		print "mintupload: %s" % commands.getoutput("mint-apt-version mintupload 2> /dev/null")
-		exit(0)
-	if sys.argv[1] in ["-h","--help"]:
-		print """Usage: mintupload.py path/to/filename"""
-		exit(0)
-
-	filename = sys.argv[1]
-	mainwin = mintUploadWindow(filename)
+	mainwin = mintUploadWindow(sys.argv[1])
 	gtk.main()
