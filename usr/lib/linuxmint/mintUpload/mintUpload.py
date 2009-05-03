@@ -45,13 +45,13 @@ if __name__ == "__main__":
 		exit(0)
 	elif sys.argv[1] in ["-h","--help"]:
 		print """Usage: mintupload.py path/to/filename"""
-		print """Usage: mintupload.py -cli SERVICE path/to/filename"""
+		print """Usage: mintupload.py --cli SERVICE path/to/filename"""
 		exit(0)
-	elif sys.argv[1] == "-cli":
+	elif sys.argv[1] == "--cli":
 		if len(sys.argv) == 4:
 			cliUpload(sys.argv[2], sys.argv[3])
 		else:
-			print """Usage: mintupload.py -cli SERVICE path/to/filename"""
+			print """Usage: mintupload.py --cli SERVICE path/to/filename"""
 	else:
 		if len(sys.argv) > 2:
 			print "too many files! using only the first!"
