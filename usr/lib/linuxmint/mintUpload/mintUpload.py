@@ -52,11 +52,10 @@ if __name__ == "__main__":
             cliUpload(sys.argv[2], sys.argv[3])
         else:
             print """Usage: mintupload.py -cli SERVICE path/to/filename"""
-
-    elif len(sys.argv) > 2:
-        print "too many files! using only the first!"
-
-    from gtkUpload import *
-    mainwin = mintUploadWindow(sys.argv[1])
-    gtk.main()
+	else:
+		if len(sys.argv) > 2:
+			print "too many files! using only the first!"
+		from gtkUpload import *
+		mainwin = mintUploadWindow(sys.argv[1])
+		gtk.main()
 
